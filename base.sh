@@ -19,7 +19,7 @@ echo "127.0.1.1 archlinux.localdomain archlinux" >> /etc/hosts
 echo root:archlinux | chpasswd
 
 # Install packages. Default AMD CPU
-pacman -S --noconfirm grub efibootmgr efivar networkmanager linux-headers base base-devel bash-completion network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pulseaudio bash-completion openssh rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra ovmf bridge-utils dnsmasq vde2 openbsd-netcat ebtables iptables ipset firewalld flatpak sof-firmware nss-mdns acpid
+pacman -S --noconfirm grub xorg efibootmgr efivar networkmanager linux-headers base base-devel network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils alsa-utils pulseaudio bash-completion openssh rsync reflector virt-manager qemu qemu-arch-extra ovmf bridge-utils
 
 ###### CPU #####
 # AMD
@@ -34,3 +34,7 @@ pacman -S --noconfirm grub efibootmgr efivar networkmanager linux-headers base b
 
 # Nvidia
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings mesa
+
+###### Laptop #####
+# Battery saveing
+# pacman -S acpi acpi_call tlp

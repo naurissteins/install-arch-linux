@@ -20,19 +20,13 @@ mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 ```
 
-Install Linux base packages
+Install Linux base packages (AMD default) for intel use: intel-ucode
 ```
-pacstrap /mnt linux linux-firmware nano git amd-ucode
+pacstrap /mnt linux linux-firmware linux-headers base base-devel bash-completion nano git sed amd-ucode
 ```
 
 Generate fstab
-```# AMD
-# pacman -S amd-ucode
-
-
-# Intel
-# pacman -S intel ucode
-
+```
 genfstab -U /mnt
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab

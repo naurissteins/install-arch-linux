@@ -19,7 +19,7 @@ echo "127.0.1.1 archlinux.localdomain archlinux" >> /etc/hosts
 echo root:archlinux | chpasswd
 
 # Install packages. Default AMD CPU
-pacman -S --noconfirm grub xorg efibootmgr efivar networkmanager linux-headers base base-devel network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils dnsutils bluez bluez-utils alsa-utils pulseaudio bash-completion openssh rsync virt-manager qemu qemu-arch-extra ovmf bridge-utils
+pacman -S --noconfirm grub xorg efibootmgr efivar networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils dnsutils bluez bluez-utils alsa-utils pulseaudio bash-completion openssh rsync virt-manager qemu qemu-arch-extra ovmf bridge-utils
 
 
 ###### CPU #####

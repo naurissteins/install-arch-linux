@@ -20,7 +20,7 @@ mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 ```
 
-Install Linux base packages (AMD default) for intel use: intel-ucode
+Install Linux base packages (AMD default) for intel use: intel-ucode inetutils
 ```
 pacstrap /mnt linux linux-firmware linux-headers base base-devel bash-completion nano git sed amd-ucode
 ```

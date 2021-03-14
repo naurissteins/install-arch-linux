@@ -3,18 +3,18 @@ Create disk partitions
 gdisk /dev/sda
 ```
 
-Format boot and file system disk
+Format boot and file system partitions
 ```
 mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda2
 ```
 
-Mount system disk
+Mount system disk partition
 ```
 mount /dev/sda2 /mnt
 ```
 
-Create boot folder and mount it
+Create boot directory and mount it
 ```
 mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot

@@ -19,14 +19,15 @@ echo "127.0.1.1 archlinux.localdomain archlinux" >> /etc/hosts
 echo root:archlinux | chpasswd
 
 # Install packages. Default AMD CPU
-pacman -S --noconfirm grub xorg efibootmgr efivar networkmanager linux-headers base base-devel network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils alsa-utils pulseaudio bash-completion openssh rsync reflector virt-manager qemu qemu-arch-extra ovmf bridge-utils
+pacman -S --noconfirm grub xorg efibootmgr efivar networkmanager linux-headers base base-devel network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils dnsutils bluez bluez-utils alsa-utils pulseaudio bash-completion openssh rsync virt-manager qemu qemu-arch-extra ovmf bridge-utils
+
 
 ###### CPU #####
 # AMD
 # pacman -S amd-ucode
 
 # Intel
-# pacman -S intel ucode
+# pacman -S intel-ucode inetutils
 
 ##### GPU #####
 # AMD
@@ -38,3 +39,14 @@ pacman -S --noconfirm grub xorg efibootmgr efivar networkmanager linux-headers b
 ###### Laptop #####
 # Battery saveing
 # pacman -S acpi acpi_call tlp
+
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+
+systemctl enable NetworkManager
+systemctl enable bluetooth
+systemctl enable sshd
+systemctl enable avahi-daemon
+systemctl enable reflector.timer
+systemctl enable fstrim.timer
+systemctl enable libvirtd

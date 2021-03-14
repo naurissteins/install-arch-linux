@@ -19,7 +19,7 @@ echo "127.0.1.1 archlinux.localdomain archlinux" >> /etc/hosts
 echo root:archlinux | chpasswd
 
 # Install packages. Default AMD CPU
-pacman -S --noconfirm grub xorg efibootmgr efivar networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils dnsutils bluez bluez-utils alsa-utils pulseaudio bash-completion openssh rsync virt-manager qemu qemu-arch-extra ovmf bridge-utils
+pacman -S --noconfirm grub xorg efibootmgr efivar networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils dnsutils bluez bluez-utils alsa-utils pulseaudio penssh rsync virt-manager qemu qemu-arch-extra ovmf bridge-utils
 
 
 ###### CPU #####
@@ -50,3 +50,11 @@ systemctl enable avahi-daemon
 systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable libvirtd
+
+useradd -m arch
+echo arch:arch | chpasswd
+usermod -aG libvirt arch
+
+echo "arch ALL=(ALL) ALL" >> /etc/sudoers.d/arch
+
+/bin/echo -e "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"

@@ -37,7 +37,7 @@ Switch to arch chroot
 arch-chroot /mnt
 ```
 
-Clone Arch Install
+Clone Arch Installation Script
 ```
 git clone https://github.com/naurelijs/install-arch-linux.git
 ```

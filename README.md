@@ -41,3 +41,8 @@ Clone Arch Installation Script
 ```
 git clone https://github.com/naurelijs/install-arch-linux.git
 ```
+
+Packages
+```
+yay -S webkitgtk xdg-utils xdg-user-dirs-gtk
+```
